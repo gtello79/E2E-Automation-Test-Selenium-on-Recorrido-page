@@ -12,14 +12,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 
 import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.File;
 
 public class DOM {
 
-    private static String chromeWebDriver = "~/webdriver/chromedriver/chromedriver";
-    private static String chromeTestWebDriver = "~/webdriver/chrometest/chrome";
+    private static String chromeWebDriver = "/webdriver/chromedriver/chromedriver";
+    private static String chromeTestWebDriver = "/webdriver/chrometest/chrome";
     private static String screenShootFolder = "./demoSelenium/src/Test_Evidence/";
 
 
@@ -34,6 +35,8 @@ public class DOM {
         if (webDriver != null) {
             return webDriver;
         }
+
+        WebDriverManager.chromedriver().clearDriverCache().setup();
 
         System.setProperty("webdriver.chrome.driver", chromeWebDriver);
 
