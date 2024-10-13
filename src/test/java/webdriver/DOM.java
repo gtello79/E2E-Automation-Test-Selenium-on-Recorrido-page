@@ -18,9 +18,10 @@ import java.io.File;
 
 public class DOM {
 
-    private static String chromeWebDriver = "webdriver/chromedriver/chromedriver";
-    //private static String chromeTestWebDriver = "webdriver/chrometest/chrome";
+    private static String chromeWebDriver = "~/webdriver/chromedriver/chromedriver";
+    private static String chromeTestWebDriver = "~/webdriver/chrometest/chrome";
     private static String screenShootFolder = "./demoSelenium/src/Test_Evidence/";
+
 
     public static WebDriver webDriver;
 
@@ -38,7 +39,7 @@ public class DOM {
 
         // Define las opciones de Chrome Testing
         ChromeOptions options = new ChromeOptions();
-        //options.setBinary(chromeTestWebDriver);
+        options.setBinary(chromeTestWebDriver);
         // options.addArguments("--headless"); // Ejecutar Chromium sin interfaz gráfica
         options.addArguments("--profile-directory=Guest");
         options.addArguments("--disable-gpu"); // Deshabilitar la aceleración por hardware
