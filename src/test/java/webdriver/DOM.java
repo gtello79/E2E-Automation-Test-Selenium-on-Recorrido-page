@@ -20,7 +20,7 @@ import java.io.File;
 public class DOM {
 
     private static String chromeWebDriver = "webdriver/chromedriver/chromedriver";
-    //private static String chromeTestWebDriver = "webdriver/chrometest/chrome";
+    private static String chromeTestWebDriver = "webdriver/chrometest/chromedriver";
     private static String screenShootFolder = "./demoSelenium/src/Test_Evidence/";
 
 
@@ -36,14 +36,16 @@ public class DOM {
             return webDriver;
         }
 
+        
         WebDriverManager.chromedriver().clearDriverCache().setup();
 
-        System.setProperty("webdriver.chrome.driver", chromeWebDriver);
+        // Disable only if you want use Chrome Driver
+        //System.setProperty("webdriver.chrome.driver", chromeWebDriver);
 
         // Define las opciones de Chrome Testing
         ChromeOptions options = new ChromeOptions();
-        //options.setBinary(chromeTestWebDriver);
-         options.addArguments("--headless"); // Ejecutar Chromium sin interfaz gráfica
+        options.setBinary(chromeTestWebDriver);
+        options.addArguments("--headless"); // Ejecutar Chromium sin interfaz gráfica
         options.addArguments("--profile-directory=Guest");
         options.addArguments("--disable-gpu"); // Deshabilitar la aceleración por hardware
 
