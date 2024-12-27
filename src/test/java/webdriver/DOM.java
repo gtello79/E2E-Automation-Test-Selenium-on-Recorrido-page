@@ -20,7 +20,7 @@ import java.io.File;
 public class DOM {
 
     private static String chromeWebDriver = "webdriver/chromedriver/chromedriver";
-    private static String chromeTestWebDriver = "webdriver/chrometest/chromedriver";
+    private static String chromeTestWebDriver = "webdriver/chrometest/chrome";
     private static String screenShootFolder = "./demoSelenium/src/Test_Evidence/";
 
 
