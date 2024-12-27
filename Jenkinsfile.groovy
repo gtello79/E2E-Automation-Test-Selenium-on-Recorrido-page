@@ -10,8 +10,7 @@ pipeline {
                     withEnv(["PATH+MAVEN=${mvnHome}/bin"]) {
                         sh 'mvn -version'
                         sh 'mvn compile'
-                        sh 'xz -d webdriver/chrometest.tar.xz'
-                        sh 'tar -xvf webdriver/chrometest.tar'
+                        sh 'tar -xJf chrometest.tar.xz --overwrite'
                         sh 'mv chrometest webdriver'
                     }
                 }
