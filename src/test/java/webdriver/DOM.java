@@ -40,11 +40,11 @@ public class DOM {
         WebDriverManager.chromedriver().clearDriverCache().setup();
 
         // Disable only if you want use Chrome Driver
-        //System.setProperty("webdriver.chrome.driver", chromeWebDriver);
+        System.setProperty("webdriver.chrome.driver", chromeWebDriver);
 
         // Define las opciones de Chrome Testing
         ChromeOptions options = new ChromeOptions();
-        options.setBinary(chromeTestWebDriver);
+        //options.setBinary(chromeTestWebDriver);
         options.addArguments("--headless"); // Ejecutar Chromium sin interfaz gráfica
         options.addArguments("--profile-directory=Guest");
         options.addArguments("--disable-gpu"); // Deshabilitar la aceleración por hardware
