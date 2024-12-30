@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     def mvnHome = tool name: 'maven_3_9_5', type: 'maven'
-                    echo 'Maven Home: ${Nombre}'
+                    echo "Maven Home: ${Nombre}"
                     withEnv(["PATH+MAVEN=${mvnHome}/bin"]) {
                         sh 'mvn -version'
                         sh 'mvn compile'
